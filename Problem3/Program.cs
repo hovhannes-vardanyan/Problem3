@@ -11,6 +11,21 @@ namespace Problem3
         static void Main(string[] args)
         {
             int length = 10;
+            int [,] Matrix  =  BuidArray(length);
+
+            Console.WriteLine("The matrix is ");
+            PrintArray(Matrix,length);     
+            Console.WriteLine("Upper triangle ");
+            PrintTrianguar(Matrix,length);
+            
+
+            Console.ReadKey();
+        }
+
+
+        static int[,] BuidArray(int length)
+        {
+            
             int[,] Matrix = new int[length, length];
             Random rand = new Random();           
             for (int i = 0; i < length; i++) 
@@ -21,8 +36,12 @@ namespace Problem3
                 }
             }
 
-            Console.WriteLine("The matrix is ");
-            for (int i = 0; i < length; i++)
+            return Matrix;
+        }
+
+        static void PrintArray(int [,] Matrix,int length)
+        {
+             for (int i = 0; i < length; i++)
             {
                 for (int j = 0; j < length; j++)
                 {
@@ -30,9 +49,10 @@ namespace Problem3
                 }
                 Console.WriteLine();
             }
-
-            Console.WriteLine("Upper triangle ");
-
+        }
+        
+        static void PrintTrianguar(int [,] Matrix,int length)
+        {
             for (int i = 0; i < length; i++)
             {
                 if (i !=0) 
@@ -50,11 +70,6 @@ namespace Problem3
 
                 Console.WriteLine();
             }
-
-
-
-
-            Console.ReadKey();
         }
     }
 }
